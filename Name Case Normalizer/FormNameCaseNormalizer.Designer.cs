@@ -41,6 +41,7 @@
 			textBoxName.Name = "textBoxName";
 			textBoxName.Size = new Size(276, 23);
 			textBoxName.TabIndex = 0;
+			textBoxName.KeyPress += textBoxName_KeyPress;
 			// 
 			// labelEnterYourName
 			// 
