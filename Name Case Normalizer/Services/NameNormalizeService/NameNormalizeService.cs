@@ -25,16 +25,10 @@ namespace Name_Case_Normalizer.Services.NameNormalizeService
 
 		public string Normalize(string value)
 		{
-			string lowerCaseName = value.ToLower();
-			string[] parts = SeparatorSplitRegex().Split(lowerCaseName);
-			for(int i = 0; i < parts.Length; i++)
+			string[] parts = SeparatorSplitRegex().Split(value.ToLower());
+			for (int i = 0; i < parts.Length; i++)
 			{
-				if(i == 0)
-				{
-					parts[0] = Normalizer(parts[0]);
-					continue;
-				}
-				if (!prefixes.Contains(parts[i]))
+				if (i == 0 || !prefixes.Contains(parts[i]))
 				{
 					parts[i] = Normalizer(parts[i]);
 				}
